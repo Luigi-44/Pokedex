@@ -1,6 +1,14 @@
 import "./PokemonCard.css";
 
-function PokemonCard({ pokemon }) {
+interface PokemonCardType {
+	pokemon: {
+	name: string;
+	imgSrc?: string; 
+	};
+}
+
+
+function PokemonCard({pokemon}: PokemonCardType) {
 	return (
 		<figure>
 			{pokemon.imgSrc != null ? (

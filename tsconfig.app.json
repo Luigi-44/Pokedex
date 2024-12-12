@@ -19,10 +19,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
-    "noUncheckedSideEffectImports": true
+    // "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    // "noImplicitAny": false
   },
   "include": ["src"]
 }
