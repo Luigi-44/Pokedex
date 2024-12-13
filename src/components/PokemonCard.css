@@ -2,9 +2,32 @@
 	justify-content: center;
 	align-items: center;
 	background-color: white;
-	color: black;
 	text-align: center;
 }
-figure {
+
+	
+section{
+	display: flex;
+	flex-direction: column;
 	border: 2px solid black;
+	border-radius: 20px;
+	justify-content: space-around;
+
+div{
+	display: flex;
+	width: 100%;
+	gap: 80px;
+	margin-bottom: 30px;
+
+	button{
+    border-radius: 8px;
+	display: flex;
+	flex-direction: row;	
+	border: 1px solid black;
+	&:hover{
+		background-color: rgba(0, 0, 0, 0.574);
+		transition: ease-in-out 400ms;
+	}
+}
+}
 }
