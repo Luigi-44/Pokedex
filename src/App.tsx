@@ -2,42 +2,57 @@ import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 import { useState } from "react";
 
+const pokemonList = [
+	{
+		id : 0,
+		name: "bulbasaur",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+	},
+	{
+		id : 1,
+		name: "mew",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+	},
+	{
+		id : 2,
+		name: "charmander",
+		imgSrc:
+		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+	},
+	{
+		id : 3,
+		name: "squirtle",
+		imgSrc:
+		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+	},
+	{
+		id : 4,
+		name: "pikachu",
+		imgSrc:
+		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+	},
+	{
+		id : 5,
+		name: "Pokemon inconnu au bataillon",
+	},
+];
+
 function App() {
 	const [pokemonIndex, setPokemonIndex]=useState(0);
-	const pokemonList = [
-		{
-			name: "bulbasaur",
-			imgSrc:
-				"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-		},
-		{
-			name: "mew",
-			imgSrc:
-				"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
-		},
-		{
-			name: "Pokemon inconnu au bataillon",
-		},
-	];
-
-	const BoutPreced = () => {
-        if (pokemonIndex > 0) {
-            setPokemonIndex(pokemonIndex - 1);
-        }
-    };
-
-	const BoutSuiv = () => {
-        if (pokemonIndex < pokemonList.length - 1) {
-            setPokemonIndex(pokemonIndex + 1);
-        }
-    };
+	
 	return (
 		<section>
+		<nav>
+		    {pokemonList.map((pokemon, index)=>(
+				<li key={pokemon.id}>
+				<button type="button" onClick={()=>setPokemonIndex(index)}>{pokemon.name}</button>
+				</li>
+			))}
+
+		</nav>
 			<PokemonCard pokemon={pokemonList[pokemonIndex]} />
-			<div>
-			<button type="button" onClick={BoutPreced}>Précédent</button>
-			<button type="button" onClick={BoutSuiv}>Suivant</button>
-			</div>
 		</section>
 	);
 }
