@@ -1,11 +1,12 @@
 import PokemonCard from "./components/PokemonCard";
+import "./App.css";
 
-const App: React.FC = () => {
+function App() {
 	return (
 		<div>
 			<PokemonCard />
 		</div>
 	);
-};
+}
 
 export default App;
