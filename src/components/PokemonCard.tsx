@@ -2,7 +2,7 @@ import "./PokemonCard.css";
 
 interface PokemonCardType {
 	pokemon: {
-		id : number;
+		id: number;
 		name: string;
 		imgSrc?: string;
 	};
