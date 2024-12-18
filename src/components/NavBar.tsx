@@ -1,7 +1,10 @@
 interface Pokemon {
-	id: number;
-	name: string;
-	imgSrc?: string;
+	pokedex_id: number;
+	sprites: string[];
+	name: {
+		fr: string
+	};
+	
 }
 interface NavBarProps {
 	setPokemonIndex: (index: number) => void;
@@ -12,17 +15,17 @@ function NavBar({ pokemonList, setPokemonIndex }: NavBarProps) {
 	return (
 		<nav>
 			{pokemonList.map((pokemon, index) => (
-				<li key={pokemon.id}>
+				<li key={pokemon.pokedex_id}>
 					<button
 						type="button"
 						onClick={() => {
-							if (pokemon.name === "pikachu") {
+							if (pokemon.name.fr === "pikachu") {
 								alert(" pika");
 							}
 							setPokemonIndex(index);
 						}}
 					>
-						{pokemon.name}
+						{pokemon.name.fr}
 					</button>
 				</li>
 			))}

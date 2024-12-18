@@ -2,21 +2,28 @@ import "./PokemonCard.css";
 
 interface PokemonCardType {
 	pokemon: {
-		id: number;
-		name: string;
-		imgSrc?: string;
+		
+			pokedex_id: number;
+			sprites: {
+				regular : string;
+			}
+			name: {
+				fr: string
+			};
 	};
 }
 
 function PokemonCard({ pokemon }: PokemonCardType) {
+	console.log(pokemon);
+	
 	return (
 		<figure>
-			{pokemon.imgSrc != null ? (
-				<img src={pokemon.imgSrc} alt={pokemon.name} />
+			{pokemon.sprites.regular != null ? (
+				<img src={pokemon.sprites.regular} alt={pokemon.name.fr} />
 			) : (
 				<p>Pokemon non debloqué</p>
 			)}
-			<figcaption>{pokemon.name}</figcaption>
+			<figcaption>{pokemon.name.fr}</figcaption>
 		</figure>
 	);
 }
